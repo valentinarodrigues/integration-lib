@@ -1,0 +1,61 @@
+{
+  "name": "@valentinarodrigues/integration-lib",
+  "version": "1.0.0",
+  "description": "Shared TypeScript library for AWS Lambda, API Gateway and Apigee integrations",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "jest",
+    "lint": "tsc --noEmit",
+    "release": "changeset publish"
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": ["aws", "lambda", "apigee", "integration", "typescript"],
+  "license": "MIT",
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.500.0",
+    "@aws-sdk/client-secrets-manager": "^3.500.0",
+    "@aws-sdk/client-sqs": "^3.500.0",
+    "@aws-sdk/client-ssm": "^3.500.0",
+    "@aws-sdk/lib-dynamodb": "^3.500.0",
+    "@changesets/cli": "^2.27.1",
+    "@types/aws-lambda": "^8.10.131",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.x",
+    "@aws-sdk/client-secrets-manager": "^3.x",
+    "@aws-sdk/client-sqs": "^3.x",
+    "@aws-sdk/client-ssm": "^3.x",
+    "@aws-sdk/lib-dynamodb": "^3.x"
+  },
+  "peerDependenciesMeta": {
+    "@aws-sdk/client-dynamodb": { "optional": true },
+    "@aws-sdk/client-secrets-manager": { "optional": true },
+    "@aws-sdk/client-sqs": { "optional": true },
+    "@aws-sdk/client-ssm": { "optional": true },
+    "@aws-sdk/lib-dynamodb": { "optional": true }
+  }
+}
